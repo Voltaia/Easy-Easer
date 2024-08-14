@@ -55,5 +55,15 @@ namespace EasyEaser
 		{
 			return Quaternion.Lerp(from, to, CurveProgress);
 		}
+
+		public Color EaseColor(Color from, Color to)
+		{
+			return Color.Lerp(from, to, CurveProgress);
+		}
+
+		public Color32 EaseColor32(Color32 from, Color32 to)
+		{
+			return Color32.Lerp(from, to, CurveProgress);
+		}
 	}
 }
