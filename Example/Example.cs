@@ -33,6 +33,8 @@ public class Example : MonoBehaviour
 		{
 			transform.position = easer.EaseVector(startPosition, DesiredPosition);
 			spriteRenderer.color = easer.EaseColor(startColor, DesiredColor);
+			Debug.Log($"Linear Amount Eased: {easer.Progress}");
+			Debug.Log($"Curved Amount Easer: {easer.CurveProgress}");
 			yield return null;
 		}
 	}
