@@ -55,15 +55,5 @@ namespace EasyEaser
 		{
 			return Quaternion.Lerp(from, to, CurveProgress);
 		}
-
-		public void EaseTransform(Transform transform, Vector3 from, Vector3 to)
-		{
-			transform.position = EaseVector(from, to);
-		}
-
-		public void EaseITransform(ITransform iTransform, Vector3 from, Vector3 to)
-		{
-			iTransform.position = EaseVector(from, to);
-		}
 	}
 }
