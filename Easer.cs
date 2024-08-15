@@ -12,19 +12,16 @@ namespace EasyEaser
 		public enum Curve
 		{
 			None,
-			Smooth
+			SmoothStep,
+			SuperSmoothStep
 		}
 
-		public bool IsEasing
-		{
-			get { return Progress <= 1.0f; }
-			private set { }
-		}
+		public bool IsEasing => Progress <= 1.0f;
 
-		public float Progress
-		{
-			get { return (Time.time - startTime) / easeSeconds; }
-		}
+		public float Progress => (Time.time - startTime) / easeSeconds;
+
+		private float SmoothStep => Progress * Progress * (3.0f - 2.0f * Progress);
+		private float SuperSmoothStep => Progress * Progress * Progress * (Progress * (6.0f * Progress - 15.0f) + 10.0f);
 
 		public float CurveProgress
 		{
@@ -32,10 +29,9 @@ namespace EasyEaser
 			{
 				switch (CurveType)
 				{
-					default:
-						return Progress;
-					case Curve.Smooth:
-						return Mathf.SmoothStep(0.0f, 1.0f, Progress);
+					default: return Progress;
+					case Curve.SmoothStep: return SmoothStep;
+					case Curve.SuperSmoothStep: return SuperSmoothStep;
 				}
 			}
 		}
