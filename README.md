@@ -15,7 +15,24 @@ Of course, an easer is no good without a handful of built-in curves.
 
 But if that's not enough, custom curves may be implemented with _ease_.
 
-# Example
+# Partial Example
+```csharp
+// Ease a float smoothly from 0 to 100 over a period of 5 seconds
+private IEnumerator EaseFloat(float value)
+{
+	const float easeSeconds = 5f;
+	Easer easer = new(easeSeconds);
+	easer.Curve = Curves.SmoothStep;
+
+	while (easer.IsEasing)
+	{
+		value = easer.EaseFloat(0, 100);
+		yield return null;
+	}
+}
+```
+
+# Full Example
 ```csharp
 using UnityEngine;
 using System.Collections;
