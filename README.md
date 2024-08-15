@@ -1,12 +1,19 @@
 # Easy Easer
-A perplexingly simple easing class for Unity. Handles linear interpolation (lerping) over a specified period of seconds for basic data types such as:
+A perplexingly simple easing class for Unity. Handles interpolation over a specified period of seconds for basic data types such as:
 - `float`
 - `Vector3` & `Quaternion`
 - `Color` & `Color32`
 
-It also supports interpolation of custom types by access of its `Progress` and `CurveProgress` properties. Not enough? Custom curves and data types may be used with _ease_.
+It also supports interpolation of custom types by access of its `Progress` and `CurveProgress` properties.
 
-I plan to add many more curve types in the future.
+Of course, an easer is no good without a handful of built-in curves.
+- Smooth Step
+- Super Smooth Step
+- Cubic
+- Bounce
+- More coming soon
+
+But if that's not enough, custom curves may be implemented with _ease_.
 
 # Example
 ```csharp
@@ -57,7 +64,7 @@ public class Example : MonoBehaviour
 <img src="./Example/Example Ease.gif" width="100%">
 
 # Using Custom Curves
-Any function with a float as the paramater and a float as the return value can be used as a custom curve.
+Any function with a float for the input and a float as the return value may be used as a custom curve:
 ```csharp
 float CustomCurve(float x)
 {
