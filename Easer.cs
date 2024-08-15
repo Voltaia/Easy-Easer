@@ -5,7 +5,7 @@ namespace EasyEaser
 	public class Easer
 	{
 		public delegate float CurveFunction(float valueToCurve);
-		public CurveFunction Curve;
+		public CurveFunction Curve = (float x) => x;
 
 		private float startTime;
 		private float easeSeconds;
