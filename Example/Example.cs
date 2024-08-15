@@ -26,7 +26,7 @@ public class Example : MonoBehaviour
 
 		// Create an easer that lasts for some amount of seconds with a smooth curve
 		Easer easer = new(EaseSeconds);
-		easer.CurveType = Easer.Curve.SmoothStep;
+		easer.Curve = Curves.SmoothStep;
 
 		// Ease until easer is finished
 		while (easer.IsEasing)
