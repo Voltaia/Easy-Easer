@@ -80,7 +80,7 @@ public class Example : MonoBehaviour
 <img src="./Example/Example Inspector.png" width="100%">
 <img src="./Example/Example Ease.gif" width="100%">
 
-# Using Custom Curves
+# Custom Curves
 Any function with a float for the input and a float as the return value may be used as a custom curve:
 ```csharp
 float CustomCurve(float x)
