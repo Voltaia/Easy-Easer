@@ -1,4 +1,4 @@
-# Easy-Easer
+# Easy Easer
 A perplexingly simple easing class for Unity. Handles linear interpolation (lerping) over a specified period of seconds for basic data types like `Vector3`, `Quaternion`, and `Color`. It also supports custom interpolation by access of its `Progress` and `CurveProgress` properties. Not enough? Custom curves and data types may be added to the class with _ease_.
 
 I plan to add many more curve types in the future.
