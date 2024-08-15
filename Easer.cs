@@ -46,6 +46,11 @@ namespace EasyEaser
 			this.easeSeconds = easeSeconds;
 		}
 
+		public float EaseFloat(float from, float to)
+		{
+			return Mathf.Lerp(from, to, CurveProgress);
+		}
+
 		public Vector3 EaseVector(Vector3 from, Vector3 to)
 		{
 			return Vector3.Lerp(from, to, CurveProgress);
