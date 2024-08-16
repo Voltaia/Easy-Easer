@@ -7,6 +7,7 @@ A perplexingly simple easing class for Unity. Handles interpolation over a speci
 It also supports interpolation of custom types by access of its `Progress` and `CurveProgress` properties.
 
 Of course, an easer is no good without a handful of built-in curves.
+- Linear (default)
 - Smooth Step
 - Super Smooth Step
 - Cubic
