@@ -13,7 +13,7 @@ Of course, an easer is no good without a handful of built-in curves.
 - Bounce
 - More coming soon
 
-But if that's not enough, custom curves may be implemented with _ease_.
+And if that's not enough, custom curves may be implemented with _ease_.
 
 # Partial Example
 ```csharp
@@ -81,7 +81,7 @@ public class Example : MonoBehaviour
 <img src="./Example/Example Ease.gif" width="100%">
 
 # Custom Curves
-Any function with a float for the input and a float as the return value may be used as a custom curve.
+Any function with a float as the input and a float as the return value may be used as a custom curve.
 ```csharp
 float CustomCurve(float x)
 {
