@@ -22,27 +22,27 @@ namespace EasyEaser
 
 		public float EaseFloat(float from, float to)
 		{
-			return Mathf.Lerp(from, to, CurveProgress);
+			return Mathf.LerpUnclamped(from, to, CurveProgress);
 		}
 
 		public Vector3 EaseVector(Vector3 from, Vector3 to)
 		{
-			return Vector3.Lerp(from, to, CurveProgress);
+			return Vector3.LerpUnclamped(from, to, CurveProgress);
 		}
 
 		public Quaternion EaseQuaternion(Quaternion from, Quaternion to)
 		{
-			return Quaternion.Lerp(from, to, CurveProgress);
+			return Quaternion.LerpUnclamped(from, to, CurveProgress);
 		}
 
 		public Color EaseColor(Color from, Color to)
 		{
-			return Color.Lerp(from, to, CurveProgress);
+			return Color.LerpUnclamped(from, to, CurveProgress);
 		}
 
 		public Color32 EaseColor32(Color32 from, Color32 to)
 		{
-			return Color32.Lerp(from, to, CurveProgress);
+			return Color32.LerpUnclamped(from, to, CurveProgress);
 		}
 	}
 
@@ -74,6 +74,16 @@ namespace EasyEaser
 		public static float CubicUniform(float x)
 		{
 			return x < 0.5f ? 4f * x * x * x : 1f - Mathf.Pow(-2f * x + 2f, 3f) / 2f;
+		}
+
+		public static float Elastic(float x)
+		{
+			const float baseMultiplier = 1.70158f;
+			const float finalMultiplier = baseMultiplier * 1.525f;
+
+			return x < 0.5
+			  ? (Mathf.Pow(2f * x, 2f) * ((finalMultiplier + 1f) * 2f * x - finalMultiplier)) / 2f
+			  : (Mathf.Pow(2f * x - 2f, 2f) * ((finalMultiplier + 1f) * (x * 2f - 2f) + finalMultiplier) + 2f) / 2f;
 		}
 
 		public static float Bounce(float x)

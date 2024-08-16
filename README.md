@@ -10,7 +10,10 @@ Of course, an easer is no good without a handful of built-in curves.
 - Smooth Step
 - Super Smooth Step
 - Cubic
+- Cubic Inverse
+- Cubic Uniform
 - Bounce
+- Elastic
 - More coming soon
 
 And if that's not enough, custom curves may be implemented with _ease_.
