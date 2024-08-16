@@ -48,17 +48,30 @@ namespace EasyEaser
 
 	public static class Curves
 	{
+		// Some of these functions are sourced from https://easings.net/
+		// I would recommend checking it out for more curves
+
 		public static float SmoothStep(float x)
 		{
-			return x * x * (3.0f - 2.0f * x);
+			return x * x * (3f - 2f * x);
 		}
 
 		public static float SuperSmoothStep(float x)
 		{
-			return x * x * x * (x * (6.0f * x - 15.0f) + 10.0f);
+			return x * x * x * (x * (6f * x - 15f) + 10f);
 		}
 
 		public static float Cubic(float x)
+		{
+			return x * x * x;
+		}
+
+		public static float CubicInverse(float x)
+		{
+			return 1f - Mathf.Pow(1f - x, 3f);
+		}
+
+		public static float CubicUniform(float x)
 		{
 			return x < 0.5f ? 4f * x * x * x : 1f - Mathf.Pow(-2f * x + 2f, 3f) / 2f;
 		}
