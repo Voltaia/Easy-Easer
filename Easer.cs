@@ -16,18 +16,18 @@ namespace EasyEaser
 
 		public Easer(float easeSeconds)
 		{
-			Reset();
+			Restart();
 			this.easeSeconds = easeSeconds;
 		}
 
 		public Easer(float easeSeconds, CurveFunction curve)
 		{
-			Reset();
+			Restart();
 			this.easeSeconds = easeSeconds;
 			Curve = curve;
 		}
 
-		public void Reset()
+		public void Restart()
 		{
 			startTime = Time.time;
 		}
